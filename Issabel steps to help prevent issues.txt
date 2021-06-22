@@ -1,0 +1,13 @@
+The following tips apply to a local PBX that is NOT connected to the internet.
+
+1. use vi editor to set static IP after installation
+2. login to webui and under Security, make sure firewall is disabled
+3. under Port Knocking Interfaces, make sure you "unprotect" all adapters (should say "Inactive" under Protection)
+4. click on Fail2Ban > Admin and disable Fail2Ban
+5. Under Advanced Settings, enable direct access and update the password with jelecusa, click save
+6. if it is necessary to import extensions with weak secrets, please see additional documentation on how to do so
+	a. be sure to go to imbedded website (FreePBX/Issabel) and click Settings > Advanced Settings, and under Device Settings, set Require Strong Secrets = FALSE
+	b. click the green check to save, then apply settings
+7. Check Unembedded website for permission related errors, if you encounter them please follow the steps below:
+	a. open ssh to PBX or go directly to physical terminal and login as root
+	b. at prompt, type "amportal chown" and press enter to fix permissions issues
